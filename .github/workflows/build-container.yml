@@ -20,7 +20,7 @@ jobs:
 
       - name: Push image
         run: |
-          IMAGE_ID=marcelmaatkamp/test-gleam-linux-server
+          IMAGE_ID=ghcr.io/marcelmaatkamp/test-gleam-linux-server
           IMAGE_ID="$IMAGE_ID":$(echo "$" | sed -e 's,.*/\(.*\),\1,')
           docker tag webapp $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION

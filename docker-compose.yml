@@ -1,0 +1,5 @@
+services:
+  kafka_gleam:
+    build:
+      context: .
+      dockerfile: Dockerfile

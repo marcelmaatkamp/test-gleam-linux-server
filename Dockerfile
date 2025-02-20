@@ -1,6 +1,6 @@
-FROM erlang:27.1.1.0-alpine AS build
-COPY --from=ghcr.io/gleam-lang/gleam:v1.8.0-erlang-alpine /bin/gleam /bin/gleam
-COPY . /app/
+FROM ghcr.io/gleam-lang/gleam:v1.7.0-elixir-slim AS build
+COPY application /app/
+RUN mix local.hex --force
 RUN cd /app && gleam export erlang-shipment
 
 FROM erlang:27.1.1.0-alpine
